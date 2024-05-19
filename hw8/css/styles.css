@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Cera Pro DEMO', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container__product1 {
+    max-width: 586px;
+    max-height: 302px;
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    justify-content: flex-start; /* Keeps items aligned to the left */
+}
+
+.container__product1-text {
+    margin-left: 20px; /* Adds space between the image and the text */
+    text-align: left; /* Aligns text to the left (default) */
+
+}
+
+.catalog1 {
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    max-width: 586px;
+}
+
+img {
+    width: 287px;
+    height: 292px;
+}
