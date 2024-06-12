@@ -1,86 +1,61 @@
-/* Reset margin, padding, and border */
-*,
-*::before,
-*::after {
+/* Скидання відступів, границь та встановлення box-sizing */
+:where(:root, *, *::before, *::after) {
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: border-box;
 }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+/* Забезпечення коректного відображення блочних елементів */
+:where(article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section) {
   display: block;
 }
 
-/* Set font properties to inherit */
-body, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  font-size: 100%;
+/* Налаштування успадкування властивостей шрифту та вертикального вирівнювання */
+:where(body, blockquote, pre, code, kbd, samp, a, abbr, acronym, address, big, cite, del, dfn, em, img, ins, q, s, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video) {
   font: inherit;
   vertical-align: baseline;
 }
 
-/* Remove default list styling */
-ol, ul {
+/* Видалення стилю маркерів списків */
+:where(ol, ul) {
   list-style: none;
 }
 
-/* Set border-box sizing for all elements */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove text decoration from anchors */
+/* Скидання підкреслення посилань */
 a {
   text-decoration: none;
 }
 
-/* Set tables to border-collapse */
+/* Встановлення способу обрамлення таблиць */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* Reset form elements */
-input, button, textarea, select {
+/* Успадкування шрифту елементами форми */
+:where(input, button, textarea, select) {
   font-family: inherit;
   font-size: 100%;
 }
 
-/* Responsive images and media */
-img,
-video {
+/* Налаштування відображення зображень і медіа */
+:where(img, video) {
   max-width: 100%;
   height: auto;
 }
 
-/* Remove the outline on focused elements when they are also active or hovered */
-a:active, a:hover {
-  outline: 0;
-}
-
-/* Prevent iOS font size adjustments after orientation changes */
-html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-/* Reset body */
+/* Нормалізація стилів тіла */
 body {
-  line-height: 1;
-  background: white;
-  color: black;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Сучасні браузери */
+@media (prefers-reduced-motion: no-preference) {
+  :focus-visible {
+    outline: 2px solid #5b9dd9;
+    outline-offset: 2px;
+  }
 }
